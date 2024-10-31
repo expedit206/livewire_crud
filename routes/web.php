@@ -10,13 +10,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::middleware('auth')->prefix('customers')->group(function(){
-
-    Route::get('/create', CreateCustomer::class);
-    Route::get('/', Customers::class);
-    Route::get('/{customer}', ViewCustomers::class);
-    Route::get('/{customer}/edit', EditCustomers::class);
-})
+// route::middleware('auth')->prefix('customers')->group(function(){})
+Route::get('/customers/create', CreateCustomer::class);
+Route::get('/customers', Customers::class);
+Route::get('/customers/{customer}', ViewCustomers::class);
+Route::get('/customers/{customer}/edit', EditCustomers::class);
 
 Route::get('/register', Register::class);
 

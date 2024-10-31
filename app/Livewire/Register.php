@@ -27,6 +27,6 @@ class Register extends Component
         $user = User::create($validated);
 
         Auth::login($user);
-        return redirect('/customers');
+        return $this->redirect('/customers', navigate:true);
     }
 }
